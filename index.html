@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>熊本ヴォルターズ 2026-27 選手ガイド</title>
+  <style>
+    :root{
+      --red:#d71920;
+      --black:#111111;
+      --gray:#6f6f6f;
+      --light:#f4f4f4;
+      --white:#ffffff;
+      --line:#e4e4e4;
+    }
+
+    *{box-sizing:border-box;}
+
+    html{scroll-behavior:smooth;}
+
+    body{
+      margin:0;
+      background:var(--light);
+      color:var(--black);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+      line-height:1.7;
+    }
+
+    .container{
+      width:min(100%, 520px);
+      margin:0 auto;
+      background:var(--white);
+      min-height:100vh;
+      box-shadow:0 0 28px rgba(0,0,0,.06);
+    }
+
+    header{
+      padding:44px 24px 34px;
+      background:var(--black);
+      color:var(--white);
+    }
+
+    .eyebrow{
+      margin:0 0 8px;
+      color:#ff4b50;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.16em;
+    }
+
+    h1{
+      margin:0;
+      font-size:31px;
+      line-height:1.25;
+      letter-spacing:.01em;
+    }
+
+    .subtitle{
+      margin:12px 0 0;
+      color:#d7d7d7;
+      font-size:14px;
+    }
+
+    section{
+      padding:28px 20px;
+    }
+
+    section + section{
+      border-top:10px solid var(--light);
+    }
+
+    h2{
+      margin:0 0 18px;
+      font-size:21px;
+      line-height:1.4;
+    }
+
+    .small-note{
+      margin:-8px 0 20px;
+      color:var(--gray);
+      font-size:13px;
+    }
+
+    .position-list{
+      display:grid;
+      gap:10px;
+    }
+
+    .position-item{
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:13px 14px;
+      background:#fff;
+    }
+
+    .position-item strong{
+      display:block;
+      color:var(--red);
+      font-size:14px;
+      margin-bottom:3px;
+    }
+
+    .player-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+
+    .player-thumb{
+      text-decoration:none;
+      color:inherit;
+      border:1px solid var(--line);
+      border-radius:14px;
+      overflow:hidden;
+      background:#fff;
+      transition:transform .15s ease;
+    }
+
+    .player-thumb:active{
+      transform:scale(.98);
+    }
+
+    .thumb-photo,
+    .hero-photo{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,#ededed,#d8d8d8);
+      color:#777;
+      text-align:center;
+      font-weight:700;
+    }
+
+    .thumb-photo{
+      aspect-ratio:4/5;
+      font-size:13px;
+      padding:12px;
+    }
+
+    .thumb-photo img,
+    .hero-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .thumb-info{
+      padding:11px 11px 13px;
+    }
+
+    .thumb-number{
+      color:var(--red);
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .thumb-name{
+      display:block;
+      margin-top:2px;
+      font-size:15px;
+      font-weight:800;
+      line-height:1.35;
+    }
+
+    .thumb-position{
+      display:block;
+      margin-top:4px;
+      color:var(--gray);
+      font-size:11px;
+    }
+
+    .player-detail{
+      padding:0;
+    }
+
+    .hero-photo{
+      width:100%;
+      aspect-ratio:4/5;
+      font-size:14px;
+      padding:20px;
+    }
+
+    .detail-body{
+      padding:24px 22px 30px;
+    }
+
+    .detail-number{
+      color:var(--red);
+      font-size:18px;
+      font-weight:900;
+      letter-spacing:.02em;
+    }
+
+    .detail-name{
+      margin:2px 0 0;
+      font-size:29px;
+      line-height:1.25;
+    }
+
+    .detail-name-en{
+      margin:4px 0 17px;
+      color:var(--gray);
+      font-size:11px;
+      letter-spacing:.1em;
+    }
+
+    .position-badge{
+      display:inline-block;
+      padding:7px 11px;
+      border-radius:7px;
+      background:var(--red);
+      color:#fff;
+      font-size:13px;
+      font-weight:800;
+    }
+
+    .height{
+      margin:10px 0 0;
+      color:var(--gray);
+      font-size:13px;
+    }
+
+    .info-box{
+      margin-top:24px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+    }
+
+    .info-box h3{
+      margin:0 0 8px;
+      font-size:16px;
+    }
+
+    .info-box p{
+      margin:0;
+      font-size:15px;
+    }
+
+    .watch{
+      background:#fff7f7;
+      border-radius:12px;
+      padding:15px;
+      border-top:none;
+    }
+
+    .back{
+      display:inline-block;
+      margin-top:24px;
+      color:var(--red);
+      text-decoration:none;
+      font-size:13px;
+      font-weight:800;
+    }
+
+    .footer{
+      padding:26px 20px 36px;
+      background:#111;
+      color:#bbb;
+      font-size:11px;
+      text-align:center;
+    }
+
+    @media print{
+      body{background:#fff;}
+      .container{width:100%;max-width:none;box-shadow:none;}
+      .player-detail{break-before:page;}
+      .back{display:none;}
+      section+section{border-top:none;}
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <p class="eyebrow">KUMAMOTO VOLTERS</p>
+    <h1>2026-27<br>PLAYER GUIDE</h1>
+    <p class="subtitle">バスケ初心者向け｜試合を見ながら「この選手誰？」と思ったとき用</p>
+  </header>
+
+  <section>
+    <h2>ポジションをざっくり知ろう</h2>
+    <p class="small-note">まずはこのくらい分かれば十分です。</p>
+
+    <div class="position-list">
+      <div class="position-item"><strong>PG｜ポイントガード</strong>攻撃を組み立てる「司令塔」。</div>
+      <div class="position-item"><strong>SG｜シューティングガード</strong>外からのシュートや得点を狙う選手。</div>
+      <div class="position-item"><strong>SF｜スモールフォワード</strong>シュートもドライブもこなす万能タイプ。</div>
+      <div class="position-item"><strong>PF｜パワーフォワード</strong>ゴール近くでも外でも戦う大型選手。</div>
+      <div class="position-item"><strong>C｜センター</strong>ゴール下を守り、リバウンドでも活躍する大型選手。</div>
+    </div>
+  </section>
+
+  <section id="players">
+    <h2>選手一覧</h2>
+    <p class="small-note">選手をタップすると紹介に移動します。</p>
+
+    <div class="player-grid">
+
+      <a class="player-thumb" href="#player1">
+        <div class="thumb-photo">
+          <img src="player01.jpg" alt="選手1 写真">
+        </div>
+        <div class="thumb-info">
+          <span class="thumb-number">#1</span>
+          <span class="thumb-name">ニモ 正義</span>
+          <span class="thumb-position">SG/SF</span>
+        </div>
+      </a>
+
+      <a class="player-thumb" href="#player2">
+        <div class="thumb-photo">
+          <img src="player02.jpg" alt="選手2 写真">
+        </div>
+        <div class="thumb-info">
+          <span class="thumb-number">#3</span>
+          <span class="thumb-name">山本 翔太</span>
+          <span class="thumb-position">SG</span>
+        </div>
+      </a>
+
+      <a class="player-thumb" href="#player3">
+        <div class="thumb-photo">
+          <img src="player03.jpg" alt="選手3 写真">
+        </div>
+        <div class="thumb-info">
+          <span class="thumb-number">#5</span>
+          <span class="thumb-name">磯野 寛晃</span>
+          <span class="thumb-position">SG/SF</span>
+        </div>
+      </a>
+
+      <a class="player-thumb" href="#player4">
+        <div class="thumb-photo">
+          <img src="player04.jpg" alt="選手4 写真">
+        </div>
+        <div class="thumb-info">
+          <span class="thumb-number">#8</span>
+          <span class="thumb-name">LJ・ピーク</span>
+          <span class="thumb-position">SF</span>
+        </div>
+      </a>
+
+      <a class="player-thumb" href="#player5">
+        <div class="thumb-photo">
+          <img src="player05.jpg" alt="選手5 写真">
+        </div>
+        <div class="thumb-info">
+          <span class="thumb-number">#11</span>
+          <span class="thumb-name">石川 海斗</span>
+          <span class="thumb-position">PG</span>
+        </div>
+      </a>
+
+      <a class="player-thumb" href="#player6">
+        <div class="thumb-photo">
+          <img src="player06.jpg" alt="選手6 写真">
+        </div>
+        <div class="thumb-info">
+          <span class="thumb-number">#12</span>
+          <span class="thumb-name">保坂 晃毅</span>
+          <span class="thumb-position">PG/SG</span>
+        </div>
+      </a>
+
+      <a class="player-thumb" href="#player7">
+        <div class="thumb-photo">
+          <img src="player07.jpg" alt="選手7 写真">
+        </div>
+        <div class="thumb-info">
+          <span class="thumb-number">#15</span>
+          <span class="thumb-name">モッチ ラミン</span>
+          <span class="thumb-position">C</span>
+        </div>
+      </a>
+
+      <a class="player-thumb" href="#player8">
+        <div class="thumb-photo">
+          <img src="player08.jpg" alt="選手8 写真">
+        </div>
+        <div class="thumb-info">
+          <span class="thumb-number">#17</span>
+          <span class="thumb-name">澤邉 圭太</span>
+          <span class="thumb-position">SG</span>
+        </div>
+      </a>
+
+      <a class="player-thumb" href="#player9">
+        <div class="thumb-photo">
+          <img src="player09.jpg" alt="選手9 写真">
+        </div>
+        <div class="thumb-info">
+          <span class="thumb-number">#18</span>
+          <span class="thumb-name">藤澤 尚之</span>
+          <span class="thumb-position">PG</span>
+        </div>
+      </a>
+
+      <a class="player-thumb" href="#player10">
+        <div class="thumb-photo">
+          <img src="player10.jpg" alt="選手10 写真">
+        </div>
+        <div class="thumb-info">
+          <span class="thumb-number">#25</span>
+          <span class="thumb-name">ジャスティン・マッツ</span>
+          <span class="thumb-position">SF/PF</span>
+        </div>
+      </a>
+
+      <a class="player-thumb" href="#player11">
+        <div class="thumb-photo">
+          <img src="player11.jpg" alt="選手11 写真">
+        </div>
+        <div class="thumb-info">
+          <span class="thumb-number">#31</span>
+          <span class="thumb-name">山田 安斗夢</span>
+          <span class="thumb-position">SG</span>
+        </div>
+      </a>
+
+      <a class="player-thumb" href="#player12">
+        <div class="thumb-photo">
+          <img src="player12.jpg" alt="選手12 写真">
+        </div>
+        <div class="thumb-info">
+          <span class="thumb-number">#33</span>
+          <span class="thumb-name">笹倉 怜寿</span>
+          <span class="thumb-position">PG</span>
+        </div>
+      </a>
+
+      <a class="player-thumb" href="#player13">
+        <div class="thumb-photo">
+          <img src="player13.jpg" alt="選手13 写真">
+        </div>
+        <div class="thumb-info">
+          <span class="thumb-number">#88</span>
+          <span class="thumb-name">グレゴリー・エチェニケ</span>
+          <span class="thumb-position">C/PF</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="player-detail" id="player1">
+    <div class="hero-photo">
+      <img src="player01.jpg" alt="選手1 写真">
+    </div>
+
+    <div class="detail-body">
+      <div class="detail-number">#1</div>
+      <h2 class="detail-name">ニモ 正義</h2>
+      <p class="detail-name-en">MASAYOSHI NIMO</p>
+
+      <span class="position-badge">SG / シューティングガード / SF / スモールフォワード</span>
+      <p class="height">身長：198cm</p>
+
+      <div class="info-box">
+        <h3>🏀 どんな選手？</h3>
+        <p>
+          ポテンシャル溢れる期待の若手！
+          <br>
+          チーム最年少ながら、198cmの長身と驚異の身体能力を活かしたダイナミックなプレーが魅力。
+          <br>
+        </p>
+      </div>
+
+      <div class="info-box watch">
+        <h3>👀 ここに注目！</h3>
+        <p>NBA Global Academyにも所属していた経験があり、将来日本代表選手になる可能性も！</p>
+      </div>
+
+      <a class="back" href="#players">↑ 選手一覧に戻る</a>
+    </div>
+  </section>
+
+  <section class="player-detail" id="player2">
+    <div class="hero-photo">
+      <img src="player02.jpg" alt="選手2 写真">
+    </div>
+
+    <div class="detail-body">
+      <div class="detail-number">#3</div>
+      <h2 class="detail-name">山本 翔太</h2>
+      <p class="detail-name-en">SHOTA YAMAMOTO</p>
+
+      <span class="position-badge">SG / シューティングガード</span>
+      <p class="height">身長：188cm</p>
+
+      <div class="info-box">
+        <h3>🏀 どんな選手？</h3>
+        <p>
+          熊本の絶対的エース。<br>
+        3Pシュートはもちろん、ドライブでも得点が狙える万能型スコアラー。
+          <br>
+        </p>
+      </div>
+
+      <div class="info-box watch">
+        <h3>👀 ここに注目！</h3>
+        <p>とにかく笑顔が素敵！試合中に相手選手と話す事も。</p>
+      </div>
+
+      <a class="back" href="#players">↑ 選手一覧に戻る</a>
+    </div>
+  </section>
+
+  <section class="player-detail" id="player3">
+    <div class="hero-photo">
+      <img src="player03.jpg" alt="選手3 写真">
+    </div>
+
+    <div class="detail-body">
+      <div class="detail-number">#5</div>
+      <h2 class="detail-name">磯野 寛晃</h2>
+      <p class="detail-name-en">HIROAKI ISONO</p>
+
+      <span class="position-badge">SG / シューティングガード / SF / スモールフォワード</span>
+      <p class="height">身長：186cm</p>
+
+      <div class="info-box">
+        <h3>🏀 どんな選手？</h3>
+        <p>
+          ヴォルターズのキャプテンで、ディフェンスの要。
+          <br>
+          ハイプレッシャーなディフェンスは、外国籍エースの攻撃をも封じる。
+          <br>
+          オープンからの3Pシュートも得意で、チームの勝利に貢献する。
+        </p>
+      </div>
+
+      <div class="info-box watch">
+        <h3>👀 ここに注目！</h3>
+        <p>速攻からの「カツオダンク」は魅力的！</p>
+      </div>
+
+      <a class="back" href="#players">↑ 選手一覧に戻る</a>
+    </div>
+  </section>
+
+  <section class="player-detail" id="player4">
+    <div class="hero-photo">
+      <img src="player04.jpg" alt="選手4 写真">
+    </div>
+
+    <div class="detail-body">
+      <div class="detail-number">#8</div>
+      <h2 class="detail-name">LJ・ピーク</h2>
+      <p class="detail-name-en">LJ PEAK</p>
+
+      <span class="position-badge">SF / スモールフォワード</span>
+      <p class="height">身長：196cm</p>
+
+      <div class="info-box">
+        <h3>🏀 どんな選手？</h3>
+        <p>
+          帰ってきたエーススコアラー！
+          <br>
+          圧倒的な得点能力で、ヴォルターズのオフェンスを牽引する。
+          <br>
+          過去にはヴォルターズで52点を記録したこともあり、その得点力で勝利を掴む。
+        </p>
+      </div>
+
+      <div class="info-box watch">
+        <h3>👀 ここに注目！</h3>
+        <p>身体能力も高く、速攻では派手なダンクを見せる事も！</p>
+      </div>
+
+      <a class="back" href="#players">↑ 選手一覧に戻る</a>
+    </div>
+  </section>
+
+  <section class="player-detail" id="player5">
+    <div class="hero-photo">
+      <img src="player05.jpg" alt="選手5 写真">
+    </div>
+
+    <div class="detail-body">
+      <div class="detail-number">#11</div>
+      <h2 class="detail-name">石川 海斗</h2>
+      <p class="detail-name-en">KAITO ISHIKAWA</p>
+
+      <span class="position-badge">PG / ポイントガード</span>
+      <p class="height">身長：170cm</p>
+
+      <div class="info-box">
+        <h3>🏀 どんな選手？</h3>
+        <p>
+          熊本の絶対的司令塔。
+          <br>
+          抜群なパスセンスで、チームの攻撃を組み立てる。
+          <br>
+          B2優勝を経験した経験値の高さで、チームを勝利に導く。
+          <br>
+        </p>
+      </div>
+
+      <div class="info-box watch">
+        <h3>👀 ここに注目！</h3>
+        <p>タフショットが得意と自負するほど、絶対的な自信を持っている。</p>
+      </div>
+
+      <a class="back" href="#players">↑ 選手一覧に戻る</a>
+    </div>
+  </section>
+
+  <section class="player-detail" id="player6">
+    <div class="hero-photo">
+      <img src="player06.jpg" alt="選手6 写真">
+    </div>
+
+    <div class="detail-body">
+      <div class="detail-number">#12</div>
+      <h2 class="detail-name">保坂 晃毅</h2>
+      <p class="detail-name-en">KOKI HOSAKA</p>
+
+      <span class="position-badge">PG / ポイントガード / SG / シューティングガード</span>
+      <p class="height">身長：181cm</p>
+
+      <div class="info-box">
+        <h3>🏀 どんな選手？</h3>
+        <p>
+          圧倒的なスピードで、試合の流れを変える存在。
+          <br>
+          昨シーズンはケガに苦しんだが、今シーズンこそは、そのポテンシャルを発揮することが期待される。
+          <br>
+        </p>
+      </div>
+
+      <div class="info-box watch">
+        <h3>👀 ここに注目！</h3>
+        <p>勝負強さも魅力の1つで、試合を決めるレイアップを決めた事も。</p>
+      </div>
+
+      <a class="back" href="#players">↑ 選手一覧に戻る</a>
+    </div>
+  </section>
+
+  <section class="player-detail" id="player7">
+    <div class="hero-photo">
+      <img src="player07.jpg" alt="選手7 写真">
+    </div>
+
+    <div class="detail-body">
+      <div class="detail-number">#15</div>
+      <h2 class="detail-name">モッチ ラミン</h2>
+      <p class="detail-name-en">LAMIN MOTCHE</p>
+
+      <span class="position-badge">C / センター</span>
+      <p class="height">身長：202cm</p>
+
+      <div class="info-box">
+        <h3>🏀 どんな選手？</h3>
+        <p>
+          202cmの長身とフィジカルで、熊本のゴール下を支える帰化選手。
+          <br>
+          チームの戦術の幅を広げる、ヴォルターズのキーマン。
+          <br>
+        </p>
+      </div>
+
+      <div class="info-box watch">
+        <h3>👀 ここに注目！</h3>
+        <p>帰化選手なので、外国籍選手2名と同時起用できる！
+          <br>
+          コート上の選手のサイズアップにより、試合を有利に進めることができる。
+        </p>
+      </div>
+
+      <a class="back" href="#players">↑ 選手一覧に戻る</a>
+    </div>
+  </section>
+
+  <section class="player-detail" id="player8">
+    <div class="hero-photo">
+      <img src="player08.jpg" alt="選手8 写真">
+    </div>
+
+    <div class="detail-body">
+      <div class="detail-number">#17</div>
+      <h2 class="detail-name">澤邉 圭太</h2>
+      <p class="detail-name-en">KEITA SAWABE</p>
+
+      <span class="position-badge">SG / シューティングガード</span>
+      <p class="height">身長：185cm</p>
+
+      <div class="info-box">
+        <h3>🏀 どんな選手？</h3>
+        <p>
+          熊本出身の3&D。
+        <br>
+          昨シーズンは3Pの確率は40.3%！
+        <br>
+          献身的なディフェンスでも、チームに貢献する。
+          <br>
+        </p>
+      </div>
+
+      <div class="info-box watch">
+        <h3>👀 ここに注目！</h3>
+        <p>チームが不調な時、ベンチでチームを鼓舞する存在でもある。</p>
+      </div>
+
+      <a class="back" href="#players">↑ 選手一覧に戻る</a>
+    </div>
+  </section>
+
+  <section class="player-detail" id="player9">
+    <div class="hero-photo">
+      <img src="player09.jpg" alt="選手9 写真">
+    </div>
+
+    <div class="detail-body">
+      <div class="detail-number">#18</div>
+      <h2 class="detail-name">藤澤 尚之</h2>
+      <p class="detail-name-en">NAOYUKI FUJISAWA</p>
+
+      <span class="position-badge">PG / ポイントガード</span>
+      <p class="height">身長：172cm</p>
+
+      <div class="info-box">
+        <h3>🏀 どんな選手？</h3>
+        <p>
+          5年ぶりに熊本に帰ってきたポイントガード。
+        <br>
+          昨シーズンは平均21分の出場で、平均4.9アシストを記録。
+        <br>
+        チームの攻撃を組み立てる司令塔として、チームの勝利に貢献する。
+        <br>
+        </p>
+      </div>
+
+      <div class="info-box watch">
+        <h3>👀 ここに注目！</h3>
+        <p>退団した時、成長した姿を見せたい！とコメントを残していた。その成長がチームの勝利に繋がることが期待される。</p>
+      </div>
+
+      <a class="back" href="#players">↑ 選手一覧に戻る</a>
+    </div>
+  </section>
+
+  <section class="player-detail" id="player10">
+    <div class="hero-photo">
+      <img src="player10.jpg" alt="選手10 写真">
+    </div>
+
+    <div class="detail-body">
+      <div class="detail-number">#25</div>
+      <h2 class="detail-name">ジャスティン・マッツ</h2>
+      <p class="detail-name-en">JUSTIN MUTZ</p>
+
+      <span class="position-badge">SF / スモールフォワード / PF / パワーフォワード</span>
+      <p class="height">身長：201cm</p>
+
+      <div class="info-box">
+        <h3>🏀 どんな選手？</h3>
+        <p>
+          3Pシュートからプレイメイク、インサイドへのドライブも得意な万能型アスレチックフォワード。
+          <br>
+          身体能力も非常に高く、豪快なダンクでチームを盛り上げる。
+          <br>
+        </p>
+      </div>
+
+      <div class="info-box watch">
+        <h3>👀 ここに注目！</h3>
+        <p>チームメイトへのアシストも得意で、チームの攻撃を支える存在。</p>
+      </div>
+
+      <a class="back" href="#players">↑ 選手一覧に戻る</a>
+    </div>
+  </section>
+
+  <section class="player-detail" id="player11">
+    <div class="hero-photo">
+      <img src="player11.jpg" alt="選手11 写真">
+    </div>
+
+    <div class="detail-body">
+      <div class="detail-number">#31</div>
+      <h2 class="detail-name">山田 安斗夢</h2>
+      <p class="detail-name-en">ATOMU YAMADA</p>
+
+      <span class="position-badge">SG / シューティングガード</span>
+      <p class="height">身長：179cm</p>
+
+      <div class="info-box">
+        <h3>🏀 どんな選手？</h3>
+        <p>
+          勝負所での3Pシュートに強みを持つ。
+          <br>
+          ピック&ロールで得点を挙げることもできる。
+          <br>
+          特にベンチから出場し、チームに勢いを与えることができる存在。
+          <br>
+        </p>
+      </div>
+
+      <div class="info-box watch">
+        <h3>👀 ここに注目！</h3>
+        <p>ここぞという所で3Pシュートを決め、会場を盛り上げる。</p>
+      </div>
+
+      <a class="back" href="#players">↑ 選手一覧に戻る</a>
+    </div>
+  </section>
+
+  <section class="player-detail" id="player12">
+    <div class="hero-photo">
+      <img src="player12.jpg" alt="選手12 写真">
+    </div>
+
+    <div class="detail-body">
+      <div class="detail-number">#33</div>
+      <h2 class="detail-name">笹倉 怜寿</h2>
+      <p class="detail-name-en">REIJU SASAKURA</p>
+
+      <span class="position-badge">PG / ポイントガード</span>
+      <p class="height">身長：187cm</p>
+
+      <div class="info-box">
+        <h3>🏀 どんな選手？</h3>
+        <p>
+          昨シーズンB2優勝を経験した万能型コンボガード。
+          <br>
+          187cmの長身ながら、PG~SFまでこなせる器用さを持つ。
+          <br>
+          チームの戦術の幅を広げる存在。
+          <br>
+        </p>
+      </div>
+
+      <div class="info-box watch">
+        <h3>👀 ここに注目！</h3>
+        <p>試合中でも、多彩な役割をこなすことが期待されている。</p>
+      </div>
+
+      <a class="back" href="#players">↑ 選手一覧に戻る</a>
+    </div>
+  </section>
+
+  <section class="player-detail" id="player13">
+    <div class="hero-photo">
+      <img src="player13.jpg" alt="選手13 写真">
+    </div>
+
+    <div class="detail-body">
+      <div class="detail-number">#88</div>
+      <h2 class="detail-name">グレゴリー・エチェニケ</h2>
+      <p class="detail-name-en">GREGORY ECHENIQUE</p>
+
+      <span class="position-badge">C / センター / PF / パワーフォワード</span>
+      <p class="height">身長：208cm</p>
+
+      <div class="info-box">
+        <h3>🏀 どんな選手？</h3>
+        <p>
+          熊本の用心棒。
+          <br>
+          208cmの長身と130kgの圧倒的なフィジカルで、ゴール下を支える。
+          <br>
+          チームの副キャプテンでもあり、チームを支える縁の下の力持ち。
+        </p>
+      </div>
+
+      <div class="info-box watch">
+        <h3>👀 ここに注目！</h3>
+        <p>Bリーグ内でも屈指の巨漢だか、表情やジェスチャーがとてもかわいい。</p>
+      </div>
+
+      <a class="back" href="#players">↑ 選手一覧に戻る</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>こんな時はこの選手を見る</h2>
+    <div class="position-list">
+      <div class="position-item"><strong>🏀 ボールを運んでいることが多い</strong>石川選手 / 藤澤選手 / 保坂選手</div>
+      <div class="position-item"><strong>🎯 3Pシュートに注目</strong>山本選手 / 山田選手 / LJ・ピーク選手</div>
+      <div class="position-item"><strong>💨 ドライブがすごい</strong>LJ・ピーク選手 / マッツ選手</div>
+      <div class="position-item"><strong>💪 ゴール下で戦う</strong>エチェニケ選手 / モッチ選手</div>
+      <div class="position-item"><strong>🛡️ ディフェンスに注目</strong>磯野選手 / 澤邉選手</div>
+    </div>
+  </section>
+
+  <div class="footer">
+    熊本ヴォルターズ 2026-27 初心者向け選手ガイド｜個人利用用テンプレート
+  </div>
+
+</div>
+</body>
+</html>
