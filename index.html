@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BasketVantageは、選手やチームを知ることで、バスケットボール観戦をもっと楽しむためのサイトです。" />
+  <title>BasketVantage｜バスケ観戦を、もっと楽しむために。</title>
+  <style>
+    :root{
+      --ink:#111111;
+      --muted:#6c6c6c;
+      --paper:#ffffff;
+      --bg:#f4f4f2;
+      --line:#e6e6e2;
+      --accent:#d71920;
+      --accent-soft:#fff2f2;
+    }
+
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:var(--bg);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+      line-height:1.75;
+    }
+
+    a{color:inherit;}
+
+    .site{
+      width:min(100%, 900px);
+      min-height:100vh;
+      margin:0 auto;
+      background:var(--paper);
+      box-shadow:0 0 32px rgba(0,0,0,.05);
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:18px 24px;
+      border-bottom:1px solid var(--line);
+      background:rgba(255,255,255,.96);
+    }
+
+    .brand{
+      font-size:18px;
+      font-weight:900;
+      letter-spacing:-.02em;
+      text-decoration:none;
+    }
+
+    .topbar-note{
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      padding:72px 28px 68px;
+      background:var(--ink);
+      color:#fff;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      width:260px;
+      height:260px;
+      right:-95px;
+      bottom:-100px;
+      border:24px solid rgba(255,255,255,.08);
+      border-radius:50%;
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      width:min(100%, 720px);
+      margin:0 auto;
+    }
+
+    .eyebrow{
+      margin:0 0 12px;
+      color:#ff6167;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.18em;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(42px,10vw,72px);
+      line-height:1;
+      letter-spacing:-.045em;
+    }
+
+    .hero-copy{
+      max-width:560px;
+      margin:24px 0 0;
+      color:#dedede;
+      font-size:clamp(15px,3vw,18px);
+    }
+
+    main{
+      width:min(100%, 760px);
+      margin:0 auto;
+      padding:46px 22px 64px;
+    }
+
+    .intro{
+      margin-bottom:44px;
+    }
+
+    .section-label{
+      margin:0 0 8px;
+      color:var(--accent);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.16em;
+    }
+
+    h2{
+      margin:0 0 14px;
+      font-size:28px;
+      line-height:1.35;
+    }
+
+    .intro p{
+      margin:0;
+      color:#444;
+      font-size:15px;
+    }
+
+    .content-card{
+      display:block;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:20px;
+      text-decoration:none;
+      background:#fff;
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+
+    .content-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 14px 34px rgba(0,0,0,.08);
+    }
+
+    .card-visual{
+      position:relative;
+      min-height:220px;
+      padding:28px;
+      background:linear-gradient(135deg,#141414,#2b2b2b);
+      color:#fff;
+      overflow:hidden;
+    }
+
+    .card-visual::before{
+      content:"";
+      position:absolute;
+      width:180px;
+      height:180px;
+      right:-38px;
+      top:20px;
+      border:16px solid rgba(215,25,32,.78);
+      border-radius:50%;
+    }
+
+    .card-kicker{
+      position:relative;
+      z-index:1;
+      margin:0 0 8px;
+      color:#ff6267;
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.14em;
+    }
+
+    .card-title{
+      position:relative;
+      z-index:1;
+      margin:0;
+      max-width:470px;
+      font-size:32px;
+      line-height:1.2;
+    }
+
+    .card-season{
+      position:relative;
+      z-index:1;
+      margin:10px 0 0;
+      color:#d7d7d7;
+      font-weight:700;
+    }
+
+    .card-body{
+      padding:22px 24px 24px;
+    }
+
+    .card-body p{
+      margin:0 0 18px;
+      color:#555;
+      font-size:14px;
+    }
+
+    .card-link{
+      color:var(--accent);
+      font-size:14px;
+      font-weight:900;
+    }
+
+    .future{
+      margin-top:36px;
+      padding:20px;
+      border-radius:14px;
+      background:var(--accent-soft);
+      font-size:14px;
+    }
+
+    .future strong{display:block;margin-bottom:4px;}
+
+    footer{
+      padding:28px 22px 36px;
+      border-top:1px solid var(--line);
+      color:#888;
+      font-size:12px;
+      text-align:center;
+    }
+
+    @media (max-width:600px){
+      .topbar{padding:15px 18px;}
+      .topbar-note{display:none;}
+      .hero{padding:56px 22px 54px;}
+      main{padding-top:38px;}
+      .card-visual{min-height:200px;padding:24px 22px;}
+      .card-title{font-size:28px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <div class="topbar">
+      <a class="brand" href="./">BasketVantage</a>
+      <span class="topbar-note">BASKETBALL VIEWING GUIDE</span>
+    </div>
+
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">SEE MORE. ENJOY MORE.</p>
+        <h1>BasketVantage</h1>
+        <p class="hero-copy">選手やチームを知ることで、バスケ観戦をもっと楽しむためのサイト。</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="section-label">ABOUT</p>
+        <h2>知ると、試合はもっと面白い。</h2>
+        <p>BasketVantageでは、バスケ初心者にも分かりやすい言葉で、選手の特徴やチームの見どころを紹介していきます。</p>
+      </section>
+
+      <section>
+        <p class="section-label">FEATURED CONTENT</p>
+        <h2>まずはこちら</h2>
+
+        <a class="content-card" href="teams/kumamoto-volters/2026-27/">
+          <div class="card-visual">
+            <p class="card-kicker">KUMAMOTO VOLTERS</p>
+            <h3 class="card-title">熊本ヴォルターズ<br>選手ガイド</h3>
+            <p class="card-season">2026-27 SEASON</p>
+          </div>
+          <div class="card-body">
+            <p>「この選手は誰？」「どこに注目すればいい？」を、観戦しながらすぐ確認できる初心者向けガイドです。</p>
+            <span class="card-link">選手ガイドを見る →</span>
+          </div>
+        </a>
+
+        <div class="future">
+          <strong>BasketVantageは、ここから。</strong>
+          今後、選手のプレースタイルやチームの特徴など、観戦がもっと楽しくなるコンテンツを増やしていく予定です。
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      BasketVantage｜バスケ観戦を、もっと楽しむために。
+    </footer>
+  </div>
+</body>
+</html>
